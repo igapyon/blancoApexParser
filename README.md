@@ -5,7 +5,7 @@ Lexical Parser for Apex language written in Java.
 
 Prepare *.cls file as input.
 
-```java:MySimpleTest.cls
+```java
 @isTest
 public without sharing class MySimpleTest {
     static testMethod void testMain001() {
@@ -16,7 +16,7 @@ public without sharing class MySimpleTest {
 
 Run Apex rexical parser.
 
-```java:MySimpleTest.cls
+```java
 final List<BlancoApexToken> result = new BlancoApexParser()
     .parse(new File("./test/data/apex/MySimpleTest.cls"));
 

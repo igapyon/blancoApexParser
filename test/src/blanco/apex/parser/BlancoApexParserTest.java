@@ -28,19 +28,13 @@ import blanco.apex.parser.token.BlancoApexToken;
  * @author Toshiki Iga
  */
 public class BlancoApexParserTest {
-
 	@Test
 	public void test001() throws Exception {
-		// TODO change apex class filename to adapt your environment.
-		final List<BlancoApexToken> result = new BlancoApexParser().parse(new File("/home/user1/MyUtils.cls"));
+		final List<BlancoApexToken> result = new BlancoApexParser()
+				.parse(new File("./test/data/apex/MySimpleTest.cls"));
 
-		if (false)
-			System.out.println(BlancoApexParserUtil.tokenList2String(result));
-
-		if (true)
-			for (BlancoApexToken lookup : result) {
-				System.out.println(lookup.getDisplayString());
-				// System.out.print(lookup.getValue());
-			}
+		for (BlancoApexToken lookup : result) {
+			System.out.println(lookup.getDisplayString());
+		}
 	}
 }

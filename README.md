@@ -94,3 +94,9 @@ NEWLINE[n]
  * limitations under the License.
  */
 ```
+
+## Misc
+
+```sh
+mvn archetype:generate -DgroupId=jp.igapyon.blanco.apex.parser -DartifactId=BlancoApexParser -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```

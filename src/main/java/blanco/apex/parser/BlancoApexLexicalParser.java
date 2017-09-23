@@ -252,7 +252,12 @@ public class BlancoApexLexicalParser {
 			reader.mark(1);
 			final int iRead = reader.read();
 			if (iRead < 0) {
-				break;
+				// exit method
+				final BlancoApexCommentToken newToken = new BlancoApexCommentToken(strbuf.toString(), lineNumber,
+						BlancoApexCommentToken.CommentType.SINGLE_LINE);
+				tokenList.add(newToken);
+
+				return;
 			}
 			final char cRead = (char) iRead;
 			if (cRead == '\n' || cRead == '\r') {

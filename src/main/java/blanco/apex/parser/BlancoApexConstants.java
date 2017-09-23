@@ -21,7 +21,7 @@ package blanco.apex.parser;
  * @author Toshiki Iga
  */
 public class BlancoApexConstants {
-    public static final String VERSION = "v1.1";
+    public static final String VERSION = "v1.2";
 
     public static String getVersion() {
         return VERSION;

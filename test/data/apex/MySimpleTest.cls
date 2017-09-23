@@ -4,3 +4,4 @@ public without sharing class MySimpleTest {
         System.assert(false, 'First hello word written in Apex, as a error of test code.');
     }
 }
+// tail comment.

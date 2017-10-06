@@ -21,13 +21,13 @@ package blanco.apex.parser.token;
  * @author Toshiki Iga
  */
 public class BlancoApexWhitespaceToken extends BlancoApexToken {
-	public BlancoApexWhitespaceToken(final String value, final int lineNumber) {
-		this.value = value;
-		this.originalValue = value;
-		this.lineNumber = lineNumber;
-	}
+    public BlancoApexWhitespaceToken(final String value, final int lineNumber) {
+        this.value = value;
+        this.originalValue = value;
+        this.lineNumber = lineNumber;
+    }
 
-	public String getDisplayString() {
-		return "WHITESPACE[" + getValue() + "]";
-	}
+    public String getDisplayString() {
+        return "WHITESPACE[" + getValue() + "]";
+    }
 }

@@ -25,69 +25,69 @@ import blanco.apex.parser.token.BlancoApexToken;
  * @author Toshiki Iga
  */
 public class BlancoApexParserUtil {
-	/**
-	 * Is whitespace chars or not excluding new-lines.
-	 * 
-	 * @param cRead
-	 * @return
-	 */
-	public static boolean isWhitespaceWithoutLines(final char cRead) {
-		if (cRead == ' ' || cRead == '\t' || cRead == '　'/* FULL_WIDTH_SPACE */) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+    /**
+     * Is whitespace chars or not excluding new-lines.
+     * 
+     * @param cRead
+     * @return
+     */
+    public static boolean isWhitespaceWithoutLines(final char cRead) {
+        if (cRead == ' ' || cRead == '\t' || cRead == '　'/* FULL_WIDTH_SPACE */) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-	/**
-	 * Is special char.
-	 * 
-	 * @param cRead
-	 * @return
-	 */
-	public static boolean isSpecialChar(final char cRead) {
-		switch (cRead) {
-		case '.':
-		case ',':
-		case ';':
-		case ':':
-		case '=':
-		case '+':
-		case '-':
-		case '*':
-		case '/':
-		case '#':
-		case '!':
-		case '?':
-		case '|':
-		case '&':
-		case '%':
-		case '{':
-		case '}':
-		case '(':
-		case ')':
-		case '<':
-		case '>':
-		case '[':
-		case ']':
-		case '@':// Annotation!!! FIXME
-			return true;
-		default:
-			return false;
-		}
-	}
+    /**
+     * Is special char.
+     * 
+     * @param cRead
+     * @return
+     */
+    public static boolean isSpecialChar(final char cRead) {
+        switch (cRead) {
+        case '.':
+        case ',':
+        case ';':
+        case ':':
+        case '=':
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+        case '#':
+        case '!':
+        case '?':
+        case '|':
+        case '&':
+        case '%':
+        case '{':
+        case '}':
+        case '(':
+        case ')':
+        case '<':
+        case '>':
+        case '[':
+        case ']':
+        case '@':// Annotation!!! FIXME
+            return true;
+        default:
+            return false;
+        }
+    }
 
-	/**
-	 * convert token list to string.
-	 * 
-	 * @param tokenList
-	 * @return
-	 */
-	public static String tokenList2String(final List<BlancoApexToken> tokenList) {
-		final StringBuffer strbuf = new StringBuffer();
-		for (BlancoApexToken lookup : tokenList) {
-			strbuf.append(lookup.getValue());
-		}
-		return strbuf.toString();
-	}
+    /**
+     * convert token list to string.
+     * 
+     * @param tokenList
+     * @return
+     */
+    public static String tokenList2String(final List<BlancoApexToken> tokenList) {
+        final StringBuffer strbuf = new StringBuffer();
+        for (BlancoApexToken lookup : tokenList) {
+            strbuf.append(lookup.getValue());
+        }
+        return strbuf.toString();
+    }
 }

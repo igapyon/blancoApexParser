@@ -32,56 +32,56 @@ import blanco.apex.parser.token.BlancoApexToken;
  * @author Toshiki Iga
  */
 public class BlancoApexParser {
-	public static final String[] COMBINED_SPECIAL_CHAR = new String[] { "++", "--", "<=", ">=", "==", "!=", "&&", "||",
-			"+=", "-=", "*=", "/=", "&=",
-			// additional
-			"=>" };
+    public static final String[] COMBINED_SPECIAL_CHAR = new String[] { "++", "--", "<=", ">=", "==", "!=", "&&", "||",
+            "+=", "-=", "*=", "/=", "&=",
+            // additional
+            "=>" };
 
-	public List<BlancoApexToken> parse(final String sourceString) throws IOException {
-		final BufferedReader reader = new BufferedReader(new StringReader(sourceString));
-		try {
-			return parse(reader);
-		} finally {
-			reader.close();
-		}
-	}
+    public List<BlancoApexToken> parse(final String sourceString) throws IOException {
+        final BufferedReader reader = new BufferedReader(new StringReader(sourceString));
+        try {
+            return parse(reader);
+        } finally {
+            reader.close();
+        }
+    }
 
-	public List<BlancoApexToken> parse(final File file) throws IOException {
-		final BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
-		try {
-			return parse(reader);
-		} finally {
-			reader.close();
-		}
-	}
+    public List<BlancoApexToken> parse(final File file) throws IOException {
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
+        try {
+            return parse(reader);
+        } finally {
+            reader.close();
+        }
+    }
 
-	public List<BlancoApexToken> parse(final BufferedReader reader) throws IOException {
-		final List<BlancoApexToken> tokenList = new BlancoApexLexicalParser().parse(reader);
-		for (int index = 0; index < tokenList.size(); index++) {
-			final BlancoApexToken lookup = tokenList.get(index);
-			if (lookup instanceof BlancoApexSpecialCharToken) {
-				if (index >= tokenList.size() - 1) {
-					// combine special char needs +1 size.
-					break;
-				}
-				final BlancoApexSpecialCharToken specialChar = (BlancoApexSpecialCharToken) lookup;
+    public List<BlancoApexToken> parse(final BufferedReader reader) throws IOException {
+        final List<BlancoApexToken> tokenList = new BlancoApexLexicalParser().parse(reader);
+        for (int index = 0; index < tokenList.size(); index++) {
+            final BlancoApexToken lookup = tokenList.get(index);
+            if (lookup instanceof BlancoApexSpecialCharToken) {
+                if (index >= tokenList.size() - 1) {
+                    // combine special char needs +1 size.
+                    break;
+                }
+                final BlancoApexSpecialCharToken specialChar = (BlancoApexSpecialCharToken) lookup;
 
-				if (tokenList.get(index + 1) instanceof BlancoApexSpecialCharToken == false) {
-					// combine special char needs both special char
-					continue;
-				}
-				final BlancoApexSpecialCharToken specialCharNext = (BlancoApexSpecialCharToken) tokenList
-						.get(index + 1);
-				final String combinedSpecialCharCandidate = specialChar.getValue() + specialCharNext.getValue();
-				for (String combined : COMBINED_SPECIAL_CHAR) {
-					if (combinedSpecialCharCandidate.equals(combined)) {
-						specialChar.setValue(specialChar.getValue() + specialCharNext.getValue());
-						tokenList.remove(index + 1);
-					}
-				}
-			}
-		}
+                if (tokenList.get(index + 1) instanceof BlancoApexSpecialCharToken == false) {
+                    // combine special char needs both special char
+                    continue;
+                }
+                final BlancoApexSpecialCharToken specialCharNext = (BlancoApexSpecialCharToken) tokenList
+                        .get(index + 1);
+                final String combinedSpecialCharCandidate = specialChar.getValue() + specialCharNext.getValue();
+                for (String combined : COMBINED_SPECIAL_CHAR) {
+                    if (combinedSpecialCharCandidate.equals(combined)) {
+                        specialChar.setValue(specialChar.getValue() + specialCharNext.getValue());
+                        tokenList.remove(index + 1);
+                    }
+                }
+            }
+        }
 
-		return tokenList;
-	}
+        return tokenList;
+    }
 }

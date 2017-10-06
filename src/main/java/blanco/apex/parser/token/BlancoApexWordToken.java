@@ -21,38 +21,38 @@ package blanco.apex.parser.token;
  * @author Toshiki Iga
  */
 public class BlancoApexWordToken extends BlancoApexToken {
-	protected boolean reservedKeyword = false;
-	protected boolean systemType = false;
+    protected boolean reservedKeyword = false;
+    protected boolean systemType = false;
 
-	public boolean isReservedKeyword() {
-		return reservedKeyword;
-	}
+    public boolean isReservedKeyword() {
+        return reservedKeyword;
+    }
 
-	public void setReservedKeyword(final boolean reservedKeyword) {
-		this.reservedKeyword = reservedKeyword;
-	}
+    public void setReservedKeyword(final boolean reservedKeyword) {
+        this.reservedKeyword = reservedKeyword;
+    }
 
-	public boolean isSystemType() {
-		return systemType;
-	}
+    public boolean isSystemType() {
+        return systemType;
+    }
 
-	public void setSystemType(final boolean systemType) {
-		this.systemType = systemType;
-	}
+    public void setSystemType(final boolean systemType) {
+        this.systemType = systemType;
+    }
 
-	/**
-	 * Constructor
-	 * 
-	 * @param value
-	 * @param lineNumber
-	 */
-	public BlancoApexWordToken(final String value, final int lineNumber) {
-		this.value = value;
-		this.originalValue = value;
-		this.lineNumber = lineNumber;
-	}
+    /**
+     * Constructor
+     * 
+     * @param value
+     * @param lineNumber
+     */
+    public BlancoApexWordToken(final String value, final int lineNumber) {
+        this.value = value;
+        this.originalValue = value;
+        this.lineNumber = lineNumber;
+    }
 
-	public String getDisplayString() {
-		return "WORD[" + getValue() + "]";
-	}
+    public String getDisplayString() {
+        return "WORD[" + getValue() + "]";
+    }
 }

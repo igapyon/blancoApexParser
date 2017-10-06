@@ -21,49 +21,49 @@ package blanco.apex.parser.token;
  * @author Toshiki Iga
  */
 public abstract class BlancoApexToken {
-	/**
-	 * value of token.
-	 */
-	protected String value;
+    /**
+     * value of token.
+     */
+    protected String value;
 
-	/**
-	 * original value of token.
-	 */
-	protected String originalValue;
+    /**
+     * original value of token.
+     */
+    protected String originalValue;
 
-	/**
-	 * line number on original source code.
-	 */
-	protected int lineNumber = -1;
+    /**
+     * line number on original source code.
+     */
+    protected int lineNumber = -1;
 
-	/**
-	 * note from programmer.
-	 */
-	protected String note;
+    /**
+     * note from programmer.
+     */
+    protected String note;
 
-	public String getValue() {
-		return value;
-	}
+    public String getValue() {
+        return value;
+    }
 
-	public void setValue(final String arg) {
-		value = arg;
-	}
+    public void setValue(final String arg) {
+        value = arg;
+    }
 
-	public String getOriginalValue() {
-		return originalValue;
-	}
+    public String getOriginalValue() {
+        return originalValue;
+    }
 
-	public int getLineNumber() {
-		return lineNumber;
-	}
+    public int getLineNumber() {
+        return lineNumber;
+    }
 
-	public String getNote() {
-		return note;
-	}
+    public String getNote() {
+        return note;
+    }
 
-	public void addNote(final String arg) {
-		note = note + arg;
-	}
+    public void addNote(final String arg) {
+        note = note + arg;
+    }
 
-	public abstract String getDisplayString();
+    public abstract String getDisplayString();
 }

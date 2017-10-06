@@ -21,16 +21,16 @@ package blanco.apex.parser.token;
  * @author Toshiki Iga
  */
 public class BlancoApexNewlineToken extends BlancoApexToken {
-	public BlancoApexNewlineToken(final String value, final int lineNumber) {
-		this.value = value;
-		this.originalValue = value;
-		this.lineNumber = lineNumber;
-	}
+    public BlancoApexNewlineToken(final String value, final int lineNumber) {
+        this.value = value;
+        this.originalValue = value;
+        this.lineNumber = lineNumber;
+    }
 
-	public String getDisplayString() {
-		String val = getValue();
-		val = val.replace('\r', 'r');
-		val = val.replace('\n', 'n');
-		return "NEWLINE[" + val + "]";
-	}
+    public String getDisplayString() {
+        String val = getValue();
+        val = val.replace('\r', 'r');
+        val = val.replace('\n', 'n');
+        return "NEWLINE[" + val + "]";
+    }
 }

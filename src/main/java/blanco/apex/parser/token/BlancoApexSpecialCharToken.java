@@ -22,13 +22,13 @@ package blanco.apex.parser.token;
  */
 public class BlancoApexSpecialCharToken extends BlancoApexToken {
 
-	public BlancoApexSpecialCharToken(final String value, final int lineNumber) {
-		this.value = value;
-		this.originalValue = value;
-		this.lineNumber = lineNumber;
-	}
+    public BlancoApexSpecialCharToken(final String value, final int lineNumber) {
+        this.value = value;
+        this.originalValue = value;
+        this.lineNumber = lineNumber;
+    }
 
-	public String getDisplayString() {
-		return "SPECIAL_CHAR[" + getValue() + "]";
-	}
+    public String getDisplayString() {
+        return "SPECIAL_CHAR[" + getValue() + "]";
+    }
 }

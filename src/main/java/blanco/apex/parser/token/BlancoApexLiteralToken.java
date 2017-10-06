@@ -21,28 +21,28 @@ package blanco.apex.parser.token;
  * @author Toshiki Iga
  */
 public class BlancoApexLiteralToken extends BlancoApexToken {
-	public enum LiteralType {
-		UNDEFINED, STRING, NUMBER
-	}
+    public enum LiteralType {
+        UNDEFINED, STRING, NUMBER
+    }
 
-	protected LiteralType literalType = LiteralType.UNDEFINED;
+    protected LiteralType literalType = LiteralType.UNDEFINED;
 
-	public BlancoApexLiteralToken(final String value, final int lineNumber, final LiteralType literalType) {
-		this.value = value;
-		this.originalValue = value;
-		this.lineNumber = lineNumber;
-		this.literalType = literalType;
-	}
+    public BlancoApexLiteralToken(final String value, final int lineNumber, final LiteralType literalType) {
+        this.value = value;
+        this.originalValue = value;
+        this.lineNumber = lineNumber;
+        this.literalType = literalType;
+    }
 
-	public void setLiteralType(LiteralType arg) {
-		literalType = arg;
-	}
+    public void setLiteralType(LiteralType arg) {
+        literalType = arg;
+    }
 
-	public LiteralType getLiteralType() {
-		return literalType;
-	}
+    public LiteralType getLiteralType() {
+        return literalType;
+    }
 
-	public String getDisplayString() {
-		return "LITERAL(" + literalType + ")[" + getValue() + "]";
-	}
+    public String getDisplayString() {
+        return "LITERAL(" + literalType + ")[" + getValue() + "]";
+    }
 }

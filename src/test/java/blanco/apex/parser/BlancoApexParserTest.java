@@ -28,13 +28,13 @@ import blanco.apex.parser.token.BlancoApexToken;
  * @author Toshiki Iga
  */
 public class BlancoApexParserTest {
-	@Test
-	public void test001() throws Exception {
-		final List<BlancoApexToken> result = new BlancoApexParser()
-				.parse(new File("./test/data/apex/MySimpleTest.cls"));
+    @Test
+    public void test001() throws Exception {
+        final List<BlancoApexToken> result = new BlancoApexParser()
+                .parse(new File("./test/data/apex/MySimpleTest.cls"));
 
-		for (BlancoApexToken lookup : result) {
-			System.out.println(lookup.getDisplayString());
-		}
-	}
+        for (BlancoApexToken lookup : result) {
+            System.out.println(lookup.getDisplayString());
+        }
+    }
 }

@@ -5,7 +5,7 @@
     <artifactId>blancoApexParser</artifactId>
     <packaging>jar</packaging>
     <version>1.2</version>
-    <name>BlancoApexParser</name>
+    <name>blancoApexParser</name>
     <url>http://maven.apache.org</url>
 
     <properties>

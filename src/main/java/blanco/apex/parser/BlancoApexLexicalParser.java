@@ -38,10 +38,19 @@ import blanco.apex.parser.token.BlancoApexWordToken;
  * You should use 'BlancoApexParser#parse' instead of
  * 'BlancoApexLexicalParser#parse' for entry point.
  * 
+ * See {@link BlancoApexParser#parse(File)}.
+ * 
  * @author Toshiki Iga
  */
 public class BlancoApexLexicalParser {
+    /**
+     * List of token.
+     */
     protected List<BlancoApexToken> tokenList = new ArrayList<BlancoApexToken>();
+
+    /**
+     * Current line number of original source code.
+     */
     protected int lineNumber = 1;
 
     /**

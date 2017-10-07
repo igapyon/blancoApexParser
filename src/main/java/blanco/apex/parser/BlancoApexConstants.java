@@ -22,9 +22,13 @@ package blanco.apex.parser;
  */
 public class BlancoApexConstants {
     /**
-     * Version of blancoApexParser.
+     * Version String of blancoApexParser. ex. v1.3.
      */
     public static final String VERSION = "v1.3";
+
+    private BlancoApexConstants() {
+        // do nothing.
+    }
 
     /**
      * Get version of blancoApexParser.

@@ -54,6 +54,11 @@ public class BlancoApexLexicalParser {
     protected int lineNumber = 1;
 
     /**
+     * Buffer field of Word to keep on-going parse.
+     */
+    protected StringBuffer strbufWord = new StringBuffer();
+
+    /**
      * Parse and tokenize source code string.
      * 
      * You should use 'BlancoApexParser#parse' instead of
@@ -94,8 +99,6 @@ public class BlancoApexLexicalParser {
             reader.close();
         }
     }
-
-    protected StringBuffer strbufWord = new StringBuffer();
 
     /**
      * main parser method for lexical parsing.

@@ -3,7 +3,7 @@
     <groupId>jp.igapyon.blanco.apex.parser</groupId>
     <artifactId>blancoApexParser</artifactId>
     <packaging>jar</packaging>
-    <version>1.5.2</version>
+    <version>1.5.3</version>
 
     <name>blancoApexParser</name>
     <description>blancoApexParser is a simple Apex Parser for developers written in Java.</description>
@@ -22,7 +22,7 @@
         <url>https://github.com/igapyon/blancoApexParser/</url>
         <connection>scm:git:https://github.com/igapyon/blancoApexParser.git</connection>
         <developerConnection>scm:git:https://github.com/igapyon/blancoApexParser.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>blancoApexParser-1.5.2</tag>
     </scm>
 
     <developers>

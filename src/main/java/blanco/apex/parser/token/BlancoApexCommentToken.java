@@ -21,18 +21,32 @@ package blanco.apex.parser.token;
  * @author Toshiki Iga
  */
 public class BlancoApexCommentToken extends BlancoApexToken {
+    /**
+     * Content type of Comment.
+     * 
+     * <ul>
+     * <li>SINGLE_LINE: single line comment.</li>
+     * <li>MULTI_LINE: multi line comment.</li>
+     * </ul>
+     */
     public enum CommentType {
         UNDEFINED, SINGLE_LINE, MULTI_LINE
     }
 
+    /**
+     * Content type of Comment.
+     */
     protected CommentType commentType = CommentType.UNDEFINED;
 
     /**
      * Constructor
      * 
      * @param value
+     *            value of comment.
      * @param lineNumber
+     *            line number of this token.
      * @param commentType
+     *            type of comment.
      */
     public BlancoApexCommentToken(final String value, final int lineNumber, final CommentType commentType) {
         this.value = value;
@@ -41,14 +55,28 @@ public class BlancoApexCommentToken extends BlancoApexToken {
         this.commentType = commentType;
     }
 
-    public void setCommentType(CommentType arg) {
+    /**
+     * Set comment type.
+     * 
+     * @param arg
+     *            comment type.
+     */
+    public void setCommentType(final CommentType arg) {
         commentType = arg;
     }
 
+    /**
+     * Get comment type.
+     * 
+     * @return comment type.
+     */
     public CommentType getCommentType() {
         return commentType;
     }
 
+    /**
+     * Getting string for display.
+     */
     public String getDisplayString() {
         return "COMMENT(" + commentType + ")[" + getValue() + "]";
     }

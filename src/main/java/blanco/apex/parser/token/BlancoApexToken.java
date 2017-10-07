@@ -65,5 +65,8 @@ public abstract class BlancoApexToken {
         note = note + arg;
     }
 
+    /**
+     * Getting String of token for display.
+     */
     public abstract String getDisplayString();
 }

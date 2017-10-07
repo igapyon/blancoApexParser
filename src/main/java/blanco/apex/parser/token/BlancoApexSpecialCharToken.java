@@ -28,6 +28,9 @@ public class BlancoApexSpecialCharToken extends BlancoApexToken {
         this.lineNumber = lineNumber;
     }
 
+    /**
+     * Getting String of token for display.
+     */
     public String getDisplayString() {
         return "SPECIAL_CHAR[" + getValue() + "]";
     }

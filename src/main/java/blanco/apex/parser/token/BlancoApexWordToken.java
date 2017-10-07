@@ -54,6 +54,9 @@ public class BlancoApexWordToken extends BlancoApexToken {
         this.lineNumber = lineNumber;
     }
 
+    /**
+     * Getting String of token for display.
+     */
     public String getDisplayString() {
         return "WORD[" + getValue() + "]";
     }

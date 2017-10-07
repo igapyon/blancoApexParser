@@ -75,7 +75,7 @@ public class BlancoApexCommentToken extends BlancoApexToken {
     }
 
     /**
-     * Getting string for display.
+     * Getting String of token for display.
      */
     public String getDisplayString() {
         return "COMMENT(" + commentType + ")[" + getValue() + "]";

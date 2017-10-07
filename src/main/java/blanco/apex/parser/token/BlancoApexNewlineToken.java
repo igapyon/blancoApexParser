@@ -27,6 +27,9 @@ public class BlancoApexNewlineToken extends BlancoApexToken {
         this.lineNumber = lineNumber;
     }
 
+    /**
+     * Getting String of token for display.
+     */
     public String getDisplayString() {
         String val = getValue();
         val = val.replace('\r', 'r');

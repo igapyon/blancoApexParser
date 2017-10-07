@@ -27,6 +27,9 @@ public class BlancoApexWhitespaceToken extends BlancoApexToken {
         this.lineNumber = lineNumber;
     }
 
+    /**
+     * Getting String of token for display.
+     */
     public String getDisplayString() {
         return "WHITESPACE[" + getValue() + "]";
     }

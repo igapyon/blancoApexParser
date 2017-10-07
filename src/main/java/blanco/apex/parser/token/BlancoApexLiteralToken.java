@@ -63,7 +63,10 @@ public class BlancoApexLiteralToken extends BlancoApexToken {
 
     /**
      * Getting String of token for display.
+     * 
+     * @return String of value for display.
      */
+    @Override
     public String getDisplayString() {
         return "LITERAL(" + literalType + ")[" + getValue() + "]";
     }

@@ -24,7 +24,7 @@ public class BlancoApexConstants {
     /**
      * Version of blancoApexParser.
      */
-    public static final String VERSION = "v1.2";
+    public static final String VERSION = "v1.3";
 
     /**
      * Get version of blancoApexParser.

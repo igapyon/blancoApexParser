@@ -56,7 +56,10 @@ public class BlancoApexWordToken extends BlancoApexToken {
 
     /**
      * Getting String of token for display.
+     * 
+     * @return String of value for display.
      */
+    @Override
     public String getDisplayString() {
         return "WORD[" + getValue() + "]";
     }

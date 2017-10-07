@@ -21,12 +21,31 @@ package blanco.apex.parser.token;
  * @author Toshiki Iga
  */
 public class BlancoApexLiteralToken extends BlancoApexToken {
+    /**
+     * Type of literal.
+     * 
+     * <ul>
+     * <li>UNDEFINED: N/A</li>
+     * <li>STRING: string</li>
+     * <li>NUMBER: number</li>
+     * </ul>
+     */
     public enum LiteralType {
         UNDEFINED, STRING, NUMBER
     }
 
     protected LiteralType literalType = LiteralType.UNDEFINED;
 
+    /**
+     * Constructor of token.
+     * 
+     * @param value
+     *            Literal string. include comma if STRING.
+     * @param lineNumber
+     *            Number of line.
+     * @param literalType
+     *            Type of literal.
+     */
     public BlancoApexLiteralToken(final String value, final int lineNumber, final LiteralType literalType) {
         this.value = value;
         this.originalValue = value;

@@ -41,10 +41,12 @@ public class BlancoApexWordToken extends BlancoApexToken {
     }
 
     /**
-     * Constructor
+     * Constructor of word token.
      * 
      * @param value
+     *            Word value.
      * @param lineNumber
+     *            Line number.
      */
     public BlancoApexWordToken(final String value, final int lineNumber) {
         this.value = value;

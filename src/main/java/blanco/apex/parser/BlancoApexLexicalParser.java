@@ -35,6 +35,9 @@ import blanco.apex.parser.token.BlancoApexWordToken;
 /**
  * Simple Apex language lexical parser.
  * 
+ * You should use 'BlancoApexParser#parse' instead of
+ * 'BlancoApexLexicalParser#parse' for entry point.
+ * 
  * @author Toshiki Iga
  */
 public class BlancoApexLexicalParser {
@@ -43,6 +46,9 @@ public class BlancoApexLexicalParser {
 
     /**
      * Parse and tokenize source code string.
+     * 
+     * You should use 'BlancoApexParser#parse' instead of
+     * 'BlancoApexLexicalParser#parse' for entry point.
      * 
      * @param sourceString
      *            source code string.
@@ -61,6 +67,9 @@ public class BlancoApexLexicalParser {
 
     /**
      * Parse and tokenize source file.
+     * 
+     * You should use 'BlancoApexParser#parse' instead of
+     * 'BlancoApexLexicalParser#parse' for entry point.
      * 
      * @param file
      *            source file to parse.
@@ -81,6 +90,9 @@ public class BlancoApexLexicalParser {
 
     /**
      * main parser method for lexical parsing.
+     * 
+     * You should use 'BlancoApexParser#parse' instead of
+     * 'BlancoApexLexicalParser#parse' for entry point.
      * 
      * @param reader
      *            Reader of source code.

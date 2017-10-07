@@ -27,7 +27,9 @@ import blanco.apex.parser.token.BlancoApexSpecialCharToken;
 import blanco.apex.parser.token.BlancoApexToken;
 
 /**
- * Simple Apex language lexical parser.
+ * Simple Apex language Parser.
+ * 
+ * This is Lexical Parser of Apex written in Java.
  * 
  * @author Toshiki Iga
  */

@@ -29,13 +29,17 @@ import blanco.apex.parser.token.BlancoApexToken;
 /**
  * Simple Apex language Parser.
  * 
+ * <p>
  * This is Lexical Parser of Apex written in Java.
+ * </p>
  * 
+ * <p>
  * Useage:
+ * </p>
  * 
- * <pre>
+ * <code>
  * List&lt;BlancoApexToken&gt; result = new BlancoApexParser().parse(new File("./test/data/apex/MySimpleTest.cls"));
- * </pre>
+ * </code>
  * 
  * @author Toshiki Iga
  */

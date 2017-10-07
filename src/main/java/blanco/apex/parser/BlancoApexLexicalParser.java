@@ -35,9 +35,11 @@ import blanco.apex.parser.token.BlancoApexWordToken;
 /**
  * Simple Apex language lexical parser.
  * 
+ * <p>
  * You should use 'BlancoApexParser#parse' instead of
  * 'BlancoApexLexicalParser#parse' for entry point.
- * 
+ * </p>
+ *
  * See {@link BlancoApexParser#parse(File)}.
  * 
  * @author Toshiki Iga

@@ -45,8 +45,8 @@ import blanco.apex.parser.token.BlancoApexToken;
  */
 public class BlancoApexParser {
     /**
-     * Special char with combine. Like "++", "--", "<=", ">=", "==", "!=", "&&",
-     * "||", "+=", ...
+     * Special char with combine. Like "++", "--", "&lt;=", "&gt;=", "==", "!=",
+     * "&amp;&amp;", "||", "+=", ...
      */
     public static final String[] COMBINED_SPECIAL_CHAR = new String[] { "++", "--", "<=", ">=", "==", "!=", "&&", "||",
             "+=", "-=", "*=", "/=", "&=",

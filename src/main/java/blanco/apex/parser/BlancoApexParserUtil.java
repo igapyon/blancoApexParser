@@ -25,6 +25,10 @@ import blanco.apex.parser.token.BlancoApexToken;
  * @author Toshiki Iga
  */
 public class BlancoApexParserUtil {
+    private BlancoApexParserUtil() {
+        // do nothing.
+    }
+
     /**
      * Is whitespace chars or not excluding new-lines.
      * 

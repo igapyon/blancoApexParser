@@ -41,6 +41,15 @@ public class BlancoApexLexicalParser {
     protected List<BlancoApexToken> tokenList = new ArrayList<BlancoApexToken>();
     protected int lineNumber = 1;
 
+    /**
+     * Parse and tokenize source code string.
+     * 
+     * @param sourceString
+     *            source code string.
+     * @return List of token.
+     * @throws IOException
+     *             I/O Exception.
+     */
     public List<BlancoApexToken> parse(final String sourceString) throws IOException {
         final BufferedReader reader = new BufferedReader(new StringReader(sourceString));
         try {
@@ -50,6 +59,15 @@ public class BlancoApexLexicalParser {
         }
     }
 
+    /**
+     * Parse and tokenize source file.
+     * 
+     * @param file
+     *            source file to parse.
+     * @return List of token.
+     * @throws IOException
+     *             I/O Exception.
+     */
     public List<BlancoApexToken> parse(final File file) throws IOException {
         final BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
         try {
@@ -65,8 +83,10 @@ public class BlancoApexLexicalParser {
      * main parser method for lexical parsing.
      * 
      * @param reader
-     * @return
+     *            Reader of source code.
+     * @return List of token.
      * @throws IOException
+     *             I/O Exception.
      */
     public List<BlancoApexToken> parse(final BufferedReader reader) throws IOException {
         for (;;) {

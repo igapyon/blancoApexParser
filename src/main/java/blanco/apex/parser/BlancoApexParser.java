@@ -32,11 +32,23 @@ import blanco.apex.parser.token.BlancoApexToken;
  * @author Toshiki Iga
  */
 public class BlancoApexParser {
+    /**
+     * Special char with combine.
+     */
     public static final String[] COMBINED_SPECIAL_CHAR = new String[] { "++", "--", "<=", ">=", "==", "!=", "&&", "||",
             "+=", "-=", "*=", "/=", "&=",
             // additional
             "=>" };
 
+    /**
+     * Entry point of Apex parser.
+     * 
+     * @param sourceString
+     *            String of source code to parse.
+     * @return List of token.
+     * @throws IOException
+     *             I/O Exception.
+     */
     public List<BlancoApexToken> parse(final String sourceString) throws IOException {
         final BufferedReader reader = new BufferedReader(new StringReader(sourceString));
         try {
@@ -46,6 +58,15 @@ public class BlancoApexParser {
         }
     }
 
+    /**
+     * Entry point of Apex parser.
+     * 
+     * @param file
+     *            File of source code to parse.
+     * @return List of token.
+     * @throws IOException
+     *             I/O Exception.
+     */
     public List<BlancoApexToken> parse(final File file) throws IOException {
         final BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
         try {
@@ -55,6 +76,15 @@ public class BlancoApexParser {
         }
     }
 
+    /**
+     * Entry point of Apex parser.
+     * 
+     * @param reader
+     *            Reader of source code to parse.
+     * @return List ot token.
+     * @throws IOException
+     *             I/O Exception.
+     */
     public List<BlancoApexToken> parse(final BufferedReader reader) throws IOException {
         final List<BlancoApexToken> tokenList = new BlancoApexLexicalParser().parse(reader);
         for (int index = 0; index < tokenList.size(); index++) {

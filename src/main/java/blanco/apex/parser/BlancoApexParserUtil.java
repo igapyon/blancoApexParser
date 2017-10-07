@@ -29,7 +29,8 @@ public class BlancoApexParserUtil {
      * Is whitespace chars or not excluding new-lines.
      * 
      * @param cRead
-     * @return
+     *            Char to check.
+     * @return true:Whitespace, false:Non-Whitespace.
      */
     public static boolean isWhitespaceWithoutLines(final char cRead) {
         if (cRead == ' ' || cRead == '\t' || cRead == '　'/* FULL_WIDTH_SPACE */) {
@@ -43,7 +44,8 @@ public class BlancoApexParserUtil {
      * Is special char.
      * 
      * @param cRead
-     * @return
+     *            Char to check.
+     * @return true:Special char, false:Non-special char.
      */
     public static boolean isSpecialChar(final char cRead) {
         switch (cRead) {
@@ -81,7 +83,8 @@ public class BlancoApexParserUtil {
      * convert token list to string.
      * 
      * @param tokenList
-     * @return
+     *            List of token.
+     * @return String of codes.
      */
     public static String tokenList2String(final List<BlancoApexToken> tokenList) {
         final StringBuffer strbuf = new StringBuffer();

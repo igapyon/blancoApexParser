@@ -21,8 +21,16 @@ package blanco.apex.parser;
  * @author Toshiki Iga
  */
 public class BlancoApexConstants {
+    /**
+     * Version of blancoApexParser.
+     */
     public static final String VERSION = "v1.2";
 
+    /**
+     * Get version of blancoApexParser.
+     * 
+     * @return Version string.
+     */
     public static String getVersion() {
         return VERSION;
     }

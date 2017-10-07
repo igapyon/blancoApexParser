@@ -21,7 +21,14 @@ package blanco.apex.parser.token;
  * @author Toshiki Iga
  */
 public class BlancoApexWordToken extends BlancoApexToken {
+    /**
+     * Marker if this is a reserved keyword or not.
+     */
     protected boolean reservedKeyword = false;
+
+    /**
+     * Marker it this is a System Type or not.
+     */
     protected boolean systemType = false;
 
     public boolean isReservedKeyword() {

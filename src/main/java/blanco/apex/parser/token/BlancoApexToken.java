@@ -27,7 +27,7 @@ public abstract class BlancoApexToken {
     protected String value;
 
     /**
-     * original value of token.
+     * original value of token. This will be populated during lexical parse.
      */
     protected String originalValue;
 

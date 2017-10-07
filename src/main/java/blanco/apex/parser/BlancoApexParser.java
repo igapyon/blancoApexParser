@@ -31,6 +31,12 @@ import blanco.apex.parser.token.BlancoApexToken;
  * 
  * This is Lexical Parser of Apex written in Java.
  * 
+ * Useage:
+ * 
+ * <pre>
+ * List&lt;BlancoApexToken&gt; result = new BlancoApexParser().parse(new File("./test/data/apex/MySimpleTest.cls"));
+ * </pre>
+ * 
  * @author Toshiki Iga
  */
 public class BlancoApexParser {

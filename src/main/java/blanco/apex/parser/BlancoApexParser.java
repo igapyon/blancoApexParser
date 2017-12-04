@@ -48,10 +48,13 @@ public class BlancoApexParser {
      * Special char with combine. Like "++", "--", "&lt;=", "&gt;=", "==", "!=",
      * "&amp;&amp;", "||", "+=", ...
      */
-    public static final String[] COMBINED_SPECIAL_CHAR = new String[] { "++", "--", "<=", ">=", "==", "!=", "&&", "||",
-            "+=", "-=", "*=", "/=", "&=",
+    public static final String[] COMBINED_SPECIAL_CHAR = new String[] { "++", "--", "<=", ">=", "==", "!=", "&&", "||", //
+            "+=", "-=", "*=", "/=", //
+            "|=", "&=", //
+            "<<=", ">>=", ">>>=", //
+            "===", "!==", "^=", "<<", ">>", ">>>", //
             // additional
-            "=>" };
+            "=>", "<>", };
 
     /**
      * Entry point of Apex parser.
@@ -100,13 +103,40 @@ public class BlancoApexParser {
      */
     public List<BlancoApexToken> parse(final BufferedReader reader) throws IOException {
         final List<BlancoApexToken> tokenList = new BlancoApexLexicalParser().parse(reader);
-        for (int index = 0; index < tokenList.size(); index++) {
+
+        // 3 chars
+        for (int index = 0; index < tokenList.size() - 2; index++) {
             final BlancoApexToken lookup = tokenList.get(index);
             if (lookup instanceof BlancoApexSpecialCharToken) {
-                if (index >= tokenList.size() - 1) {
-                    // combine special char needs +1 size.
-                    break;
+                final BlancoApexSpecialCharToken specialChar = (BlancoApexSpecialCharToken) lookup;
+
+                if (tokenList.get(index + 1) instanceof BlancoApexSpecialCharToken == false) {
+                    // combine special char needs both special char
+                    continue;
                 }
+                if (tokenList.get(index + 2) instanceof BlancoApexSpecialCharToken == false) {
+                    // combine special char needs both special char
+                    continue;
+                }
+                final BlancoApexSpecialCharToken specialCharNext = (BlancoApexSpecialCharToken) tokenList
+                        .get(index + 1);
+                final BlancoApexSpecialCharToken specialCharNextNext = (BlancoApexSpecialCharToken) tokenList
+                        .get(index + 2);
+                final String combinedSpecialCharCandidate = specialChar.getValue() + specialCharNext.getValue() + specialCharNextNext.getValue();
+                for (String combined : COMBINED_SPECIAL_CHAR) {
+                    if (combinedSpecialCharCandidate.equals(combined)) {
+                        specialChar.setValue(combinedSpecialCharCandidate);
+                        tokenList.remove(index + 2);
+                        tokenList.remove(index + 1);
+                    }
+                }
+            }
+        }
+
+        // 2 chars
+        for (int index = 0; index < tokenList.size() - 1; index++) {
+            final BlancoApexToken lookup = tokenList.get(index);
+            if (lookup instanceof BlancoApexSpecialCharToken) {
                 final BlancoApexSpecialCharToken specialChar = (BlancoApexSpecialCharToken) lookup;
 
                 if (tokenList.get(index + 1) instanceof BlancoApexSpecialCharToken == false) {
@@ -118,7 +148,7 @@ public class BlancoApexParser {
                 final String combinedSpecialCharCandidate = specialChar.getValue() + specialCharNext.getValue();
                 for (String combined : COMBINED_SPECIAL_CHAR) {
                     if (combinedSpecialCharCandidate.equals(combined)) {
-                        specialChar.setValue(specialChar.getValue() + specialCharNext.getValue());
+                        specialChar.setValue(combinedSpecialCharCandidate);
                         tokenList.remove(index + 1);
                     }
                 }
